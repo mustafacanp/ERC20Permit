@@ -19,6 +19,16 @@ contract MyContract is ERC20Permit {
 }
 ```
 
+## Setup
+
+```sh
+yarn install
+npx truffle compile
+npx truffle deploy
+yarn ganache
+yarn test
+```
+
 The `utils/signatures.ts` file contains useful functions to compute the `DOMAIN_SEPARATOR`, `digest` and `signature` from typescript.
 
 ## Further reading

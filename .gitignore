@@ -28,3 +28,5 @@ package-lock.json
 
 # Crytic
 crytic-export/
+
+db_ganache

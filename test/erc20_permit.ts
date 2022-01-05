@@ -24,7 +24,6 @@ contract('ERC20Permit', async (accounts: string[]) => {
 
   it('initializes DOMAIN_SEPARATOR and PERMIT_TYPEHASH correctly', async () => {
     assert.equal(await token.PERMIT_TYPEHASH(), PERMIT_TYPEHASH)
-
     assert.equal(await token.DOMAIN_SEPARATOR(), getDomainSeparator(name, token.address, chainId))
   })
 
@@ -43,7 +42,7 @@ contract('ERC20Permit', async (accounts: string[]) => {
     const nonce = await token.nonces(owner)
 
     // Get the EIP712 digest
-    const digest = getPermitDigest(name, token.address, chainId, approve, nonce, deadline)
+    const digest = getPermitDigest(name, token.address, chainId, approve, nonce.toNumber(), deadline)
 
     // Sign it
     // NOTE: Using web3.eth.sign will hash the message internally again which

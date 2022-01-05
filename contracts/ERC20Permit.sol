@@ -62,7 +62,7 @@ abstract contract ERC20Permit is ERC20, IERC2612 {
 
         bytes32 hash = keccak256(
             abi.encodePacked(
-                '\x19\x01',
+                "\x19\x01",
                 DOMAIN_SEPARATOR,
                 hashStruct
             )
